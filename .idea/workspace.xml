@@ -2,33 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f61e996b-7402-44e3-b5f7-1d673106ae5e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/ChatBot.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/7CM00042.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/preproc.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/small_chat.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/small_chat.voc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/test.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1540895556.yangseunghuiui-MacBook-Pro.local" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1540899934.yangseunghuiui-MacBook-Pro.local" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1540900094.yangseunghuiui-MacBook-Pro.local" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/events.out.tfevents.1540984296.yangseunghuiui-MacBook-Pro.local" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/conversation.ckpt-100.index" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/conversation.ckpt-100.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/chat.log" beforeDir="false" afterPath="$PROJECT_DIR$/data/dialog.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/chat.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/chat.voc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dialog.py" beforeDir="false" afterPath="$PROJECT_DIR$/dialog.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1512710234.AL01286619.local" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/checkpoint" beforeDir="false" afterPath="$PROJECT_DIR$/model/checkpoint" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/conversation.ckpt-10000.data-00000-of-00001" beforeDir="false" afterPath="$PROJECT_DIR$/model/conversation.ckpt-100.data-00000-of-00001" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/conversation.ckpt-10000.index" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/conversation.ckpt-10000.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chat.log" beforeDir="false" afterPath="$PROJECT_DIR$/data/chat.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/preproc.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/data/preproc.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/preproc00.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/data/preproc00.ipynb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,7 +24,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="ipynb" value="1" />
+          <entry key="ipynb" value="5" />
           <entry key="log" value="2" />
           <entry key="md" value="1" />
           <entry key="py" value="9" />
@@ -58,7 +34,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="IPNB" value="1" />
+          <entry key="IPNB" value="5" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="4" />
           <entry key="Python" value="9" />
@@ -103,16 +79,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/dialog.log">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/data/preproc.ipynb">
-          <provider selected="true" editor-type-id="ipnb-editor">
-            <state>
-              <selected id="2" />
+        <entry file="file://$PROJECT_DIR$/data/dialog.log">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="20" column="3" lean-forward="true" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -175,6 +146,7 @@
         <option value="$PROJECT_DIR$/train.py" />
         <option value="$PROJECT_DIR$/dialog.py" />
         <option value="$PROJECT_DIR$/data/preproc.ipynb" />
+        <option value="$PROJECT_DIR$/data/preproc00.ipynb" />
       </list>
     </option>
   </component>
@@ -320,9 +292,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/dialog.log">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/config.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -365,10 +334,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/data/preproc00.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/data/preproc.ipynb">
       <provider selected="true" editor-type-id="ipnb-editor">
         <state>
-          <selected id="2" />
+          <selected id="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/dialog.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="3" lean-forward="true" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
         </state>
       </provider>
     </entry>
