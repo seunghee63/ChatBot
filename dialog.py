@@ -39,11 +39,12 @@ class Dialog():
         text = ' '.join(tokens)
         return text.strip()
 
+################################################### E
     def cut_eos(self, indices):
         eos_idx = indices.index(self._EOS_ID_)
         return indices[:eos_idx]
 
-    def is_eos(self, voc_id):
+    def is_eos(self, voc_id): #
         return voc_id == self._EOS_ID_
 
     def is_defined(self, voc_id):
@@ -95,7 +96,7 @@ class Dialog():
 
         return enc_input, dec_input, target
 
-    def next_batch(self, batch_size):
+    def next_batch(self, batch_size): #다음 배치로 넘어감
         enc_input = []
         dec_input = []
         target = []
@@ -128,7 +129,7 @@ class Dialog():
 
         return enc_input, dec_input, target
 
-    def tokens_to_ids(self, tokens):
+    def tokens_to_ids(self, tokens): ##사전에 있는 각각의 단어에 인덱스 붙여줌
         ids = []
 
         for t in tokens:
@@ -157,7 +158,7 @@ class Dialog():
                 self.examples.append(ids)
 
     def tokenizer(self, sentence):
-        # 공백으로 나누고 특수문자는 따로 뽑아낸다.
+        # 공백으로 나누고 특수문자는 따로 뽑아냄
         words = []
         _TOKEN_RE_ = re.compile("([.,!?\"':;)(])")
 

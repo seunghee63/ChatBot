@@ -17,10 +17,9 @@ class Seq2Seq:
         self.n_hidden = n_hidden
         self.n_layers = n_layers
 
-        self.enc_input = tf.placeholder(tf.float32, [None, None, self.vocab_size])
+        self.enc_input = tf.placeholder(tf.float32, [None, None, self.vocab_size]) #문장의 개수, 문장안 단어의 개수, 단어의 차원
         self.dec_input = tf.placeholder(tf.float32, [None, None, self.vocab_size])
         self.targets = tf.placeholder(tf.int64, [None, None])
-
         self.weights = tf.Variable(tf.ones([self.n_hidden, self.vocab_size]), name="weights")
         self.bias = tf.Variable(tf.zeros([self.vocab_size]), name="bias")
         self.global_step = tf.Variable(0, trainable=False, name="global_step")

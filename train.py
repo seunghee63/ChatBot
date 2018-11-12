@@ -25,16 +25,21 @@ def train(dialog, batch_size=100, epoch=100):
 
         total_batch = int(math.ceil(len(dialog.examples)/float(batch_size)))
 
-        for step in range(total_batch * epoch):
+        # for step in range(total_batch * epoch):
+        for step in range(epoch):
             enc_input, dec_input, targets = dialog.next_batch(batch_size)
 
+            # print(step, len(enc_input), len(dec_input), len(targets))
             _, loss = model.train(sess, enc_input, dec_input, targets)
 
-            if (step + 1) % 100 == 0:
-                model.write_logs(sess, writer, enc_input, dec_input, targets)
+            model.write_logs(sess, writer, enc_input, dec_input, targets)
+            print('Step:', '%06d' % model.global_step.eval(), 'cost =', '{:.6f}'.format(loss))
 
-                print('Step:', '%06d' % model.global_step.eval(),
-                      'cost =', '{:.6f}'.format(loss))
+            # if (step + 1) % 100 == 0:
+            #     model.write_logs(sess, writer, enc_input, dec_input, targets)
+            #
+            #     print('Step:', '%06d' % model.global_step.eval(),
+            #           'cost =', '{:.6f}'.format(loss))
 
         checkpoint_path = os.path.join(FLAGS.train_dir, FLAGS.ckpt_name)
         model.saver.save(sess, checkpoint_path, global_step=model.global_step)
@@ -59,10 +64,10 @@ def test(dialog, batch_size=100):
         expect = dialog.decode(expect)
         outputs = dialog.decode(outputs)
 
-        pick = random.randrange(0, len(expect) / 2)
-        input = dialog.decode([dialog.examples[pick * 2]], True)
-        expect = dialog.decode([dialog.examples[pick * 2 + 1]], True)
-        outputs = dialog.cut_eos(outputs[pick])
+        pick = random.randrange(0, len(expect) / 2) #test를 위해, data set에서 랜덤 값 추출
+        input = dialog.decode([dialog.examples[pick * 2]], True) #seq2seq #입력
+        expect = dialog.decode([dialog.examples[pick * 2 + 1]], True) #예상 결과
+        outputs = dialog.cut_eos(outputs[pick]) #output의 입력값
 
         print("\n정확도:", accuracy)
         print("랜덤 결과\n")
@@ -77,9 +82,9 @@ def main(_):
     dialog.load_vocab(FLAGS.voc_path)
     dialog.load_examples(FLAGS.data_path)
 
-    if FLAGS.train:
+    if FLAGS.train: #train
         train(dialog, batch_size=FLAGS.batch_size, epoch=FLAGS.epoch)
-    elif FLAGS.test:
+    elif FLAGS.test: #test
         test(dialog, batch_size=FLAGS.batch_size)
 
 if __name__ == "__main__":
