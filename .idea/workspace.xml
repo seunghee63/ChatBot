@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f61e996b-7402-44e3-b5f7-1d673106ae5e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/data/chat.log" beforeDir="false" afterPath="$PROJECT_DIR$/data/chat.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/preproc.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/data/preproc.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/preproc00.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/data/preproc00.ipynb" afterDir="false" />
-    </list>
+    <list default="true" id="f61e996b-7402-44e3-b5f7-1d673106ae5e" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,7 +12,7 @@
     <session id="188906390">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.8" value="1" />
           <entry key="project.opened" value="2" />
@@ -24,7 +20,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="ipynb" value="5" />
+          <entry key="ipynb" value="6" />
           <entry key="log" value="2" />
           <entry key="md" value="1" />
           <entry key="py" value="9" />
@@ -34,7 +30,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="IPNB" value="5" />
+          <entry key="IPNB" value="6" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="4" />
           <entry key="Python" value="9" />
@@ -82,8 +78,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/data/dialog.log">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="3" lean-forward="true" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
+            <state relative-caret-position="480">
+              <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -334,14 +330,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/preproc00.ipynb">
+    <entry file="file://$PROJECT_DIR$/data/preproc.ipynb">
       <provider selected="true" editor-type-id="ipnb-editor">
         <state>
           <selected id="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/preproc.ipynb">
+    <entry file="file://$PROJECT_DIR$/data/preproc00.ipynb">
       <provider selected="true" editor-type-id="ipnb-editor">
         <state>
           <selected id="0" />
@@ -350,8 +346,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/data/dialog.log">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="3" lean-forward="true" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
+        <state relative-caret-position="480">
+          <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
         </state>
       </provider>
     </entry>
