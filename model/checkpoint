@@ -1,2 +1,2 @@
-model_checkpoint_path: "conversation.ckpt-120"
-all_model_checkpoint_paths: "conversation.ckpt-120"
+model_checkpoint_path: "conversation.ckpt-400"
+all_model_checkpoint_paths: "conversation.ckpt-400"
