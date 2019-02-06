@@ -3,9 +3,13 @@ import numpy as np
 import math
 import sys
 
+#from 모듈이름 import 사용 할 함수
 from config import FLAGS
 from model import Seq2Seq
 from dialog import Dialog
+
+#형태소 태깅
+from konlpy.tag import Kkma, Mecab
 
 
 class ChatBot:
@@ -46,9 +50,28 @@ class ChatBot:
 
         return self.model.predict(self.sess, [enc_input], [dec_input])
 
+    #메세지 입력 받음
     def _get_replay(self, msg):
-        enc_input = self.dialog.tokenizer(msg)
-        enc_input = self.dialog.tokens_to_ids(enc_input)
+
+        #태깅 함수 호출
+        #mecab = Mecab('/usr/local/lib/mecab/dic/mecab-ko-dic')
+        mecab = Mecab()
+        kkma = Kkma()
+
+
+        #태깅 된 문장 출
+        print(kkma.pos(msg))
+
+
+        # TODO: tokenizer기능 + tagging 기능 까지!
+        #       tokenizer 함수 이해.
+        #       tokenizer 함수는 여러군데에 적용되기 때문에, new_tokenizer_and_tagging 함수 만들기
+        #       new_tokenizer_and_tagging
+
+        #enc_input = self.dialog.tokenizer(msg)
+        enc_input = kkma.pos(msg)
+
+        enc_input = self.dialog.tokens_to_ids(enc_input)  #쪼개진 단어를 인자로 하여 아이디 매기기
         dec_input = []
 
         # TODO: 구글처럼 Seq2Seq2 모델 안의 RNN 셀을 생성하는 부분에 넣을것
