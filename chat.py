@@ -9,7 +9,7 @@ from model import Seq2Seq
 from dialog import Dialog
 
 #형태소 태깅
-from konlpy.tag import Kkma, Mecab
+from konlpy.tag import Kkma
 
 
 class ChatBot:
@@ -54,22 +54,20 @@ class ChatBot:
     def _get_replay(self, msg):
 
         #태깅 함수 호출
-        #mecab = Mecab('/usr/local/lib/mecab/dic/mecab-ko-dic')
-        mecab = Mecab()
         kkma = Kkma()
-
-
-        #태깅 된 문장 출
-        print(kkma.pos(msg))
-
 
         # TODO: tokenizer기능 + tagging 기능 까지!
         #       tokenizer 함수 이해.
         #       tokenizer 함수는 여러군데에 적용되기 때문에, new_tokenizer_and_tagging 함수 만들기
         #       new_tokenizer_and_tagging
 
+        # 태깅 이전
         #enc_input = self.dialog.tokenizer(msg)
-        enc_input = kkma.pos(msg)
+        #print("입력 값(normal): ", enc_input)
+
+        # 태깅 된 문장 출력
+        enc_input = kkma.pos(msg, 22, True)
+        #print("입력 값(konlpy): ", enc_input)
 
         enc_input = self.dialog.tokens_to_ids(enc_input)  #쪼개진 단어를 인자로 하여 아이디 매기기
         dec_input = []
@@ -78,6 +76,7 @@ class ChatBot:
         #       입력값에 따라 디코더셀의 상태를 순차적으로 구성하도록 함
         #       여기서는 최종 출력값을 사용하여 점진적으로 시퀀스를 만드는 방식을 사용
         #       다만 상황에 따라서는 이런 방식이 더 유연할 수도 있을 듯
+
         curr_seq = 0
         for i in range(FLAGS.max_decode_len):
             outputs = self._decode(enc_input, dec_input)
