@@ -67,7 +67,7 @@ class ChatBot:
 
         # 태깅 된 문장 출력
         enc_input = kkma.pos(msg, 22, True)
-        #print("입력 값(konlpy): ", enc_input)
+        print("입력 값(konlpy): ", enc_input)
 
         enc_input = self.dialog.tokens_to_ids(enc_input)  #쪼개진 단어를 인자로 하여 아이디 매기기
         dec_input = []
