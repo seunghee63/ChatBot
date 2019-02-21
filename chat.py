@@ -2,6 +2,7 @@ import tensorflow as tf
 import numpy as np
 import math
 import sys
+import re
 
 #from 모듈이름 import 사용 할 함수
 from config import FLAGS
@@ -67,9 +68,24 @@ class ChatBot:
 
         # 태깅 된 문장 출력
         enc_input = kkma.pos(msg, 22, True)
-        print("입력 값(konlpy): ", enc_input)
 
-        enc_input = self.dialog.tokens_to_ids(enc_input)  #쪼개진 단어를 인자로 하여 아이디 매기기
+        n_enc_input = []
+
+
+
+        str_enc_input = " ".join(enc_input)
+
+        str_enc_input = re.sub('\w*?/E\w*', '', str_enc_input, 0, re.I | re.S)
+        str_enc_input = re.sub('\w*?/J\w*', '', str_enc_input, 0, re.I | re.S)
+        str_enc_input = re.sub('\w*?/IC', '', str_enc_input, 0, re.I | re.S)
+
+
+        n_enc_input=str_enc_input.split()
+
+
+        print("입력 값(konlpy): ", n_enc_input)
+
+        n_enc_input = self.dialog.tokens_to_ids(n_enc_input)  #쪼개진 단어를 인자로 하여 아이디 매기기
         dec_input = []
 
         # TODO: 구글처럼 Seq2Seq2 모델 안의 RNN 셀을 생성하는 부분에 넣을것
@@ -79,7 +95,7 @@ class ChatBot:
 
         curr_seq = 0
         for i in range(FLAGS.max_decode_len):
-            outputs = self._decode(enc_input, dec_input)
+            outputs = self._decode(n_enc_input, dec_input)
             if self.dialog.is_eos(outputs[0][curr_seq]):
                 break
             elif self.dialog.is_defined(outputs[0][curr_seq]) is not True:

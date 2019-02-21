@@ -6,7 +6,7 @@ from konlpy.tag import Kkma
 fp = open('7CM00044.txt', 'r', encoding='utf-16')
 ff = open('chat.log', 'w', encoding='utf-8')
 
-Nstr = re.compile("\/[\W].*?")
+#Nstr = re.compile("\/[\W].*?")
 
 isText = 0;
 cnt = 0;
@@ -26,13 +26,13 @@ while True:
     if (isText != 1):
         continue
 
-    #
     person = re.search('<u who="P\d">', line, re.I | re.S)
     if (person is not None):
         #print(line[8:10] + ": ", end='')
         tagging_cnt = 0
 
     personEnd = re.search('</u>', line, re.I | re.S)
+
     line = re.sub('<.*?>', '', line, 0, re.I | re.S)
     line = re.sub(',', '', line, 0, re.I | re.S)
     line = re.sub('\n', '', line, 0, re.I | re.S)
@@ -40,21 +40,29 @@ while True:
     line = re.sub('<trunc>.*</trunc>', '', line, 0, re.I | re.S)
     line = re.sub('<phon>.*</phon>', '', line, 0, re.I | re.S)
 
-    # 한 사람이 말 한 내용이 없으면(한숨 같은 효과음) 없애기
-    # line = re.sub('  ',' ',line ,0, re.I|re.S)
 
     " ".join(line.split())
-
 #
     #if (line == ""):
         #continue
 
     dialog = kkma.pos(line, 22, True)
 
+
+
+
     print_dialog = ""
     for data in dialog:
         data += " "
         print_dialog += data
+
+
+    print(print_dialog)
+
+    print_dialog = re.sub('\w*?/E\w*', '', print_dialog, 0, re.I | re.S)
+    print_dialog = re.sub('\w*?/J\w*', '', print_dialog, 0, re.I | re.S)
+    print_dialog = re.sub('\w*?/IC', '', print_dialog, 0, re.I | re.S)
+
 
     # personEnd 나오기 전 까지 /cnt 세기
 
@@ -77,7 +85,7 @@ while True:
 
         tagging_cnt = print_dialog.count('/')
 
-        #너무 짧은 문장 지움
+        #너무 짧은 문장
         if (tagging_cnt == 1):
             continue
         #print(print_dialog, end='')
