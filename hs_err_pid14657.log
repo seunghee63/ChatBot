@@ -1,0 +1,33 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00000001165ffb20, pid=14657, tid=775
+#
+# JRE version: Java(TM) SE Runtime Environment (10.0.1+10) (build 10.0.1+10)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (10.0.1+10, mixed mode, tiered, compressed oops, g1 gc, bsd-amd64)
+# Problematic frame:
+# C  [_message.cpython-36m-darwin.so+0xb20]  google::protobuf::python::descriptor::Dealloc(google::protobuf::python::PyBaseDescriptor*)+0x50
+#
+# No core dump will be written. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Dfile.encoding=UTF8 -ea -Xmx1024m 
+
+Host: MacBookPro14,1 x86_64 2300 MHz, 4 cores, 8G, Darwin 18.2.0
+Time: Wed Feb 20 17:29:58 2019 KST elapsed time: 2346 seconds (0d 0h 39m 6s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007fd909801000):  JavaThread "main" [_thread_in_native, id=775, stack(0x00007ffee6f57000,0x00007ffee7f57000)]
+
+Stack: [0x00007ffee6f57000,0x00007ffee7f57000],  sp=0x00007ffee7f56490,  free space=16381k
+Native frames: (J=compiled Java code, A=aot compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [_message.cpython-36m-darwin.so+0xb20]  google::protobuf::python::descriptor::Dealloc(google::protobuf::python::PyBaseDescriptor*)+0x50
+C  [python3+0x763f6]  PyDict_Clear+0xa6

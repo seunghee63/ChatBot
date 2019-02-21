@@ -8,8 +8,8 @@ tf.app.flags.DEFINE_string("ckpt_name", "conversation.ckpt", "체크포인트 �
 tf.app.flags.DEFINE_boolean("train", False, "학습을 진행합니다.")
 tf.app.flags.DEFINE_boolean("test", True, "테스트를 합니다.")
 tf.app.flags.DEFINE_boolean("data_loop", True, "작은 데이터셋을 실험해보기 위해 사용합니다.")
-tf.app.flags.DEFINE_integer("batch_size", 100, "미니 배치 크기")
-tf.app.flags.DEFINE_integer("epoch", 1000, "총 학습 반복 횟수")
+tf.app.flags.DEFINE_integer("batch_size", 70, "미니 배치 크기") #100
+tf.app.flags.DEFINE_integer("epoch", 200, "총 학습 반복 횟수") #1000
 
 tf.app.flags.DEFINE_string("data_path", "./data/chat.log", "대화 파일 위치")
 tf.app.flags.DEFINE_string("voc_path", "./data/chat.voc", "어휘 사전 파일 위치")

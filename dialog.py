@@ -160,7 +160,9 @@ class Dialog():
     def tokenizer(self, sentence):
         # 공백으로 나누고 특수문자는 따로 뽑아냄
         words = []
-        _TOKEN_RE_ = re.compile("([.,!?\"':;)(])")
+
+        #여기서 걸렸댜
+        _TOKEN_RE_ = re.compile("([\"':;)(])")
 
         for fragment in sentence.strip().split():
             words.extend(_TOKEN_RE_.split(fragment))
