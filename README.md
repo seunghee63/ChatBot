@@ -25,8 +25,6 @@
 python3 chat.py
 ```
 
-<img src="screenshot.png" width="480">
-
 ### 데이터 전처리 > chat.log 생성
 
 ```
@@ -36,7 +34,7 @@ python preproc.py
 ### 어휘 데이터 생성 > chat.voc
 
 토크나이저를 바꿨거나 새로운 데이터를 이용하기를 원하는 경우, 다음과 같은 방법으로 먼저 어휘 데이터를 생성해야 합니다.
-기본 토크나이저는 공백과 특수문자로 구분합니다.
+기본 토크나이저는 공백(+특수문자)으로 구분합니다.
 
 ```
 python dialog.py --voc_build
